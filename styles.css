@@ -1,0 +1,122 @@
+body {
+    background-color: #f5bfda;
+    transition: background-color 0.5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+h1{
+    color: rgb(128, 24, 24);
+    font-family: 'Vivaldi', sans-serif;
+    justify-content:center;
+    letter-spacing: .8px;
+    font-size: 35px; 
+}
+h2{
+    color: rgb(128, 24, 24);
+    font-family: 'Vivaldi', sans-serif;
+    justify-content:center;
+    letter-spacing: .8px;
+    font-size: 30px;   
+}
+
+p{
+    font-family: 'Pristina';
+    font-size: 24px;
+    letter-spacing: .8px;
+}
+
+.card {
+    background:linear-gradient(rgb(255, 130, 130), rgb(250, 224, 224));
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 3px, 2px);
+    height: 70%;
+    width: 38%;
+    padding-left: 1.5em;
+}
+
+.container {
+    opacity: 0; /* Inicialmente oculta */
+    transition: opacity 2s ease; /* Transición para que aparezca */
+}
+
+.container.visible {
+    opacity: 2; /* Aparece */
+}
+
+.hearts-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.heart {
+    position: absolute;
+    color: red;
+    font-size: calc(40px + 4vmin); /* Tamaño más grande */
+    opacity: 0.5;
+    animation: float 5s linear infinite;
+}
+
+@-webkit-keyframes float {
+    0% { top: 100vh; transform: scale(0.5); opacity: 1; }
+    100% { top: -100vh; transform: scale(1); opacity: 0; }
+}
+
+@keyframes float {
+    0% { top: 100vh; transform: scale(0.5); opacity: 1; }
+    100% { top: -100vh; transform: scale(1); opacity: 0; }
+}
+
+.button-container button {
+    border-radius: 18px;
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    align-items: center;
+}
+
+.button-container button svg {
+    fill: rgb(250, 3, 44); /* Color inicial del corazón */
+    width: 29px; /* Ajusta el tamaño según tus necesidades */
+    height: 24px;
+    margin-left: 10px;
+
+}
+
+#Si {
+    background-color: #f8e6e6;
+    border: 2px solid #ff0404;
+}
+
+#No {
+    background-color: #ffe6e6;
+    border: 2px solid #fc0505;
+}
+
+#Si:hover {
+    background-color: #ff9999;
+    border-color: #ff6666;
+}
+
+#No:hover {
+    background-color: #a84040;
+    border-color: #ff6666;
+}
+
+.mensaje-oculto {
+    display: none;
+    font-family: 'pristina';
+    font-size: 22px;
+    letter-spacing: 1.2px;
+}
