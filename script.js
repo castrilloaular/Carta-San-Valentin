@@ -3,13 +3,15 @@ document.addEventListener("DOMContentLoaded", function() {
     const botonNo = document.getElementById("No");
     const botonSi = document.getElementById("Si");
     const descargar = document.getElementById("descargar");
-    const container = document.querySelector(".container");
+    const card = document.querySelector(".card.container");
+    const audioAmor = document.getElementById("audio-amor");
 
     descargar.style.display = "none";
 
-    // Mostrar la caja de mensaje después de que la página esté cargada
+    // Mostrar la tarjeta después de que la página esté cargada y reproducir el audio
     setTimeout(() => {
-        container.classList.add("visible");
+        card.classList.add("visible");
+        audioAmor.play().catch(error => console.log("Error al reproducir el audio: ", error));
     }, 500);
 
     function createHeart() {
@@ -67,5 +69,3 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
-
-

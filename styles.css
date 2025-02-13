@@ -1,3 +1,4 @@
+/* Ajustes generales */
 body {
     background-color: #f5bfda;
     transition: background-color 0.5s ease;
@@ -6,47 +7,46 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+    padding: 0;
 }
 
-h1{
+/* Texto y fuentes */
+h1, h2 {
     color: rgb(128, 24, 24);
     font-family: 'Vivaldi', sans-serif;
-    justify-content:center;
+    justify-content: center;
     letter-spacing: .8px;
+    margin: 0;
+    padding: 0.5em;
+}
+
+h1 {
     font-size: 35px; 
 }
-h2{
-    color: rgb(128, 24, 24);
-    font-family: 'Vivaldi', sans-serif;
-    justify-content:center;
-    letter-spacing: .8px;
+
+h2 {
     font-size: 30px;   
 }
 
-p{
+p {
     font-family: 'Pristina';
     font-size: 24px;
     letter-spacing: .8px;
+    margin: 0.5em 0;
 }
 
+/* Card (Tarjeta) */
 .card {
-    background:linear-gradient(rgb(255, 130, 130), rgb(250, 224, 224));
+    background: linear-gradient(rgb(255, 130, 130), rgb(250, 224, 224));
     border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 3px, 2px);
-    height: 70%;
-    width: 38%;
-    padding-left: 1.5em;
+    box-shadow: 0 4px 8px rgba(0, 0, 3, 0.2);
+    width: 90%;
+    max-width: 600px;
+    padding: 2em;
+    margin: 1em;
 }
 
-.container {
-    opacity: 0; /* Inicialmente oculta */
-    transition: opacity 2s ease; /* Transición para que aparezca */
-}
-
-.container.visible {
-    opacity: 2; /* Aparece */
-}
-
+/* Contenedor de corazones */
 .hearts-container {
     position: fixed;
     top: 0;
@@ -57,10 +57,11 @@ p{
     z-index: 1000;
 }
 
+/* Corazones */
 .heart {
     position: absolute;
     color: red;
-    font-size: calc(40px + 4vmin); /* Tamaño más grande */
+    font-size: calc(40px + 4vmin);
     opacity: 0.5;
     animation: float 5s linear infinite;
 }
@@ -75,6 +76,13 @@ p{
     100% { top: -100vh; transform: scale(1); opacity: 0; }
 }
 
+/* Botones */
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin: 1em 0;
+}
+
 .button-container button {
     border-radius: 18px;
     padding: 10px 20px;
@@ -82,16 +90,15 @@ p{
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    display: inline-block;
+    display: inline-flex;
     align-items: center;
 }
 
 .button-container button svg {
-    fill: rgb(250, 3, 44); /* Color inicial del corazón */
-    width: 29px; /* Ajusta el tamaño según tus necesidades */
+    fill: rgb(250, 3, 44);
+    width: 29px;
     height: 24px;
     margin-left: 10px;
-
 }
 
 #Si {
@@ -114,9 +121,45 @@ p{
     border-color: #ff6666;
 }
 
+/* Mensajes ocultos */
 .mensaje-oculto {
     display: none;
-    font-family: 'pristina';
+    font-family: 'Pristina';
     font-size: 22px;
     letter-spacing: 1.2px;
+    margin-top: 1em;
+}
+
+/* Media queries para móviles */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 20px;
+    }
+
+    .card {
+        width: 95%;
+        padding: 1em;
+    }
+
+    .button-container button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    .button-container button svg {
+        width: 20px;
+        height: 18px;
+    }
+
+    .mensaje-oculto {
+        font-size: 20px;
+    }
 }
